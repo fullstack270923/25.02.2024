@@ -10,14 +10,14 @@ os.cpus().forEach((cpu, index) => {
     console.log(`CPU #${index + 1}:`, cpu.model);
 });
 (async () => {
-// Disk space information for drives C and D (for Windows)
-const drives = ['C:/', 'D:/']; // For Windows, you might use 'C:/' or 'D:/', for Unix-like '/'
+    // Disk space information for drives C and D (for Windows)
+    const drives = ['C:/']; // For Windows, you might use 'C:/' or 'D:/', for Unix-like '/'
 
-for (const drive of drives) {
-  const diskSpace = await checkDiskSpace(drive);
-  console.log(`${drive} Free Space:`, diskSpace.free / 1024 / 1024 / 1024, 'GB');
-  console.log(`${drive} Total Space:`, diskSpace.size / 1024 / 1024 / 1024, 'GB');
-}
+    for (const drive of drives) {
+        const diskSpace = await checkDiskSpace(drive);
+        console.log(`${drive} Free Space:`, diskSpace.free / 1024 / 1024 / 1024, 'GB');
+        console.log(`${drive} Total Space:`, diskSpace.size / 1024 / 1024 / 1024, 'GB');
+    }
 })()
 
 // OS information
@@ -29,3 +29,4 @@ console.log('OS Type:', os.type()); // only windows
 console.log('System Uptime:', os.uptime() / 60 / 60, 'hours');
 console.log('Home Directory:', os.homedir());
 console.log('Temporary Directory:', os.tmpdir());
+

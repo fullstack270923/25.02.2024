@@ -9,6 +9,7 @@ console.log('CPUs: ', os.cpus().length, ' cores');
 os.cpus().forEach((cpu, index) => {
     console.log(`CPU #${index + 1}:`, cpu.model);
 });
+
 (async () => {
     // Disk space information for drives C and D (for Windows)
     const drives = ['C:/']; // For Windows, you might use 'C:/' or 'D:/', for Unix-like '/'
